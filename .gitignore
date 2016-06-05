@@ -1,0 +1,7 @@
+# Intelli IDEA
+.idea/**
+*.iml
+*.iws
+*.ipr
+*.ids
+*.orig
