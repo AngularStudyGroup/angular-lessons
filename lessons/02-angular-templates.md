@@ -1,6 +1,6 @@
 ## Dynamic Template On Angular
 
-Here is a basic backbone html snippet, we have to write a lot boilerplate code like list `<li>` element or table `<tr>` element.
+This is a basic backbone html snippet, we have to write a lot boilerplate code like list `<li>` element or table `<tr>` element.
 
 ```html
 <ul>
