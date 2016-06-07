@@ -47,3 +47,89 @@ After getting hang of `ng-repeat`, define a controller named `PeopleController`,
 >
 >1. https://code.angularjs.org/1.5.6/docs/tutorial/step_02
 >2. https://code.angularjs.org/1.5.6/docs/guide/di
+
+
+### Answer
+
+#### First Page
+
+```html
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 002</title>
+    <link rel="stylesheet" href="/content/css/vendor.css">
+</head>
+<body>
+    <table class="table table-striped">
+        <thead>
+            <tr><th>Name</th><th>Gender</th><th>Age</th></tr>
+        </thead>
+        <tbody>
+            <!-- Write your code here -->
+            <tr ng-repeat="i in [1, 2, 3, 4]">
+                <td>{{ i }} Girl</td>
+                <td>Female</td>
+                <td>20</td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="/bower_components/angular/angular.js"></script>
+</body>
+</html>
+```
+
+#### Second Page
+
+```html
+<!doctype html>
+<html lang="en" ng-app="lessonTwo">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 002</title>
+    <link rel="stylesheet" href="/content/css/vendor.css">
+</head>
+<body ng-controller="PeopleController">
+    <table class="table table-striped">
+        <thead>
+            <tr><th>Name</th><th>Gender</th><th>Age</th></tr>
+        </thead>
+        <tbody>
+            <!-- Write your code here -->
+            <tr ng-repeat="people in peoples">
+                <td>{{ people.name }}</td>
+                <td>{{ people.gender }}</td>
+                <td>{{ people.age }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script type="text/javascript">
+        (function () {
+            "use strict";
+            angular.module("lessonTwo", []).run();
+            angular.module("lessonTwo").controller("PeopleController", ["$scope", function ($scope) {
+                $scope.peoples = [{
+                    "name": "Lily",
+                    "gender": "female",
+                    "age": 67
+                }, {
+                    "name": "Tom",
+                    "gender": "male",
+                    "age": 23
+                }, {
+                    "name": "Bill",
+                    "gender": "male",
+                    "age": 37
+                }, {
+                    "name": "Nyan Pass",
+                    "gender": "female",
+                    "age": 7
+                }];
+            }]);
+        })();
+    </script>
+</body>
+</html>
+```
